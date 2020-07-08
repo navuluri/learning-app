@@ -59,4 +59,14 @@ public class CourseService
         }
         return courseRepository.createCourse(course);
     }
+
+    /**
+     * Delete a  course with the given courseId
+     *
+     * @param courseId Delete the course details with the given courseId
+     */
+    public void deleteCourse(String courseId)
+    {
+        courseRepository.deleteCourse(courseId);
+    }
 }

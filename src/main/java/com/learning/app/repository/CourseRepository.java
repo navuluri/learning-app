@@ -100,4 +100,14 @@ public class CourseRepository
         log.info("Record inserted successfully !");
         return course.getId();
     }
+
+    /**
+     * Delete a course with given course Id
+     *
+     * @param courseId The course id that is to be deleted
+     */
+    public void deleteCourse(String courseId)
+    {
+        jdbcTemplate.update(QueryConstants.QUERY_DELETE_COURSE, courseId);
+    }
 }

@@ -4,10 +4,12 @@ import com.learning.app.exceptions.CourseNotFoundException;
 import com.learning.app.models.Course;
 import com.learning.app.models.Result;
 import com.learning.app.service.CourseService;
+import io.swagger.annotations.Api;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -40,6 +42,7 @@ import java.util.Optional;
 @RequestMapping("/api/v1/courses")
 @Slf4j
 @AllArgsConstructor
+@Api(tags = {"Course API"})
 public class CourseApi
 {
     private final CourseService courseService;
@@ -159,6 +162,21 @@ public class CourseApi
         log.info("Provisioning a new course");
         String id = courseService.createCourse(course);
         return new ResponseEntity<>(new Result().withCode(HttpStatus.CREATED.value()).withMessage("Course created successfully. Course id is : " + id), HttpStatus.CREATED);
+    }
+
+
+    /**
+     * Deletes the course with the given Id. Does not return anything. Empty response with a HTTP Status 204 - No Content
+     *
+     * @param courseId The id for which the details have to be deleted
+     * @return Void. Returns an empty response
+     */
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteCourse(@PathVariable("id") String courseId)
+    {
+        log.info("Deleting course with id {}", courseId);
+        courseService.deleteCourse(courseId);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
 }

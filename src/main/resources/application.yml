@@ -35,8 +35,7 @@ spring:
 logging:
   level:
     org.springframework.web: ERROR
-    com.learning: ERROR
-    org.h2: DEBUG
+    com.learning: DEBUG
   file:
     name: C:\logs\service.log
 

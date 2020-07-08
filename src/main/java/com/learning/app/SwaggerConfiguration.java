@@ -8,6 +8,7 @@ import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.service.ApiInfo;
 import springfox.documentation.service.Contact;
+import springfox.documentation.service.Tag;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
@@ -39,7 +40,9 @@ public class SwaggerConfiguration
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("com.learning.app.api"))
                 .paths(PathSelectors.any())
-                .build().apiInfo(apiEndPointsInfo());
+                .build().apiInfo(apiEndPointsInfo())
+                .tags(new Tag("Course API", "The base class for all the Course APIs. All the APIs adhere to REST and HTTP principles."))
+                ;
     }
 
 
@@ -52,10 +55,10 @@ public class SwaggerConfiguration
     {
         return new ApiInfoBuilder().title("Learning App")
                 .description("Learning App REST API - The API for accessing the Learning Courses")
-                .contact(new Contact("Bhaskara", "https://stackoverflow.com/users/1781174/bhaskara", "bhaskara.navuluri@gmail.com"))
-                .license("Apache 2.0")
-                .licenseUrl("http://www.apache.org/licenses/LICENSE-2.0.html")
-                .version("1.0")
+                .contact(new Contact("Bhaskara Navuluri", "https://stackoverflow.com/users/1781174/bhaskara", "bhaskara.navuluri@gmail.com"))
+                .license("Apache License Version 2.0")
+                .licenseUrl("https://github.com/springfox/springfox/blob/master/LICENSE")
+                .version("2.0")
                 .build();
 
     }
