@@ -5,6 +5,8 @@ import com.learning.app.models.Course;
 import com.learning.app.models.Result;
 import com.learning.app.service.CourseService;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -73,6 +75,15 @@ public class CourseApi
      * @see com.learning.app.models.Course
      */
     @GetMapping("/{id}")
+    @ApiResponses(value = {
+
+            @ApiResponse(code = 200, message = "Returns a course JSON response for a given id"),
+            @ApiResponse(code = 401, message = "You are not authorized to view the course"),
+            @ApiResponse(code = 403, message = "Accessing the resource you were trying to reach is forbidden"),
+            @ApiResponse(code = 404, message = "The course you were trying to reach is not found"),
+            @ApiResponse(code = 500, message = "The course could not be fetched. There is an internal server error ")
+
+    })
     public Course getCourse(@PathVariable("id") String courseId)
     {
         log.info("Getting course information for the Course Id : {}", courseId);
@@ -118,6 +129,13 @@ public class CourseApi
      * @see com.learning.app.models.Course
      */
     @GetMapping("")
+    @ApiResponses(value = {
+
+            @ApiResponse(code = 200, message = "Returns list of all the courses available"),
+            @ApiResponse(code = 401, message = "You are not authorized to view the course"),
+            @ApiResponse(code = 403, message = "Accessing the course you were trying to reach is forbidden"),
+            @ApiResponse(code = 500, message = "The courses could not be fetched. There is an internal server error ")
+    })
     public List<Course> getAllCourses()
     {
         log.info("Getting all the courses");
@@ -157,6 +175,13 @@ public class CourseApi
      * @see com.learning.app.models.Result
      */
     @PostMapping("")
+    @ApiResponses(value = {
+
+            @ApiResponse(code = 201, message = "A course with given details is created"),
+            @ApiResponse(code = 401, message = "You are not authorized to create the course"),
+            @ApiResponse(code = 500, message = "The course could not be created. There is an internal server error ")
+
+    })
     public ResponseEntity<Result> createCourse(@RequestBody Course course)
     {
         log.info("Provisioning a new course");
@@ -172,6 +197,15 @@ public class CourseApi
      * @return Void. Returns an empty response
      */
     @DeleteMapping("/{id}")
+    @ApiResponses(value = {
+
+            @ApiResponse(code = 200, message = "The course with the given id is deleted"),
+            @ApiResponse(code = 401, message = "You are not authorized to delete the course"),
+            @ApiResponse(code = 403, message = "Accessing the course you were trying to reach is forbidden"),
+            @ApiResponse(code = 404, message = "The course you were trying to delete is not found"),
+            @ApiResponse(code = 500, message = "The course could not be deleted. There is an internal server error ")
+
+    })
     public ResponseEntity<Void> deleteCourse(@PathVariable("id") String courseId)
     {
         log.info("Deleting course with id {}", courseId);
