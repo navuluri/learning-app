@@ -5,6 +5,10 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.With;
 
+/**
+ * The value object that holds the entire course details
+ */
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

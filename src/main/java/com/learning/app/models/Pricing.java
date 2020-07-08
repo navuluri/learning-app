@@ -7,6 +7,10 @@ import lombok.With;
 
 import java.util.List;
 
+/**
+ * The value object that holds the pricing details
+ */
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

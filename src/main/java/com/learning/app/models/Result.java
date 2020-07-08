@@ -6,6 +6,10 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.With;
 
+/**
+ * The value object that represents the result that has to be sent to the user
+ */
+
 @Data
 @EqualsAndHashCode
 @NoArgsConstructor

@@ -13,6 +13,27 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 import java.util.UUID;
 
+/**
+ * Contains all the required CRUD operations that can be performed on Course details like
+ * <ul>
+ *     <li>
+ *         Get all the course details
+ *     </li>
+ *     <li>
+ *         Get course details for a particular course
+ *     </li>
+ *     <li>
+ *         Create a new course
+ *     </li>
+ * </ul>
+ * <p>
+ *     It uses Spring framework's JdbcTemplate pattern for accessing the datasource (which in this case is a H2 database)
+ * </p>
+ *
+ * @author Bhaskara Navuluri
+ * @see org.springframework.stereotype.Repository
+ */
+
 @Repository
 @Slf4j
 @AllArgsConstructor
@@ -20,6 +41,15 @@ public class CourseRepository
 {
     private final JdbcTemplate jdbcTemplate;
 
+
+    /**
+     * Queries the datasource and fetches Course details for a give course id
+     *
+     * @param courseId The course id for which the details have to be retrieved
+     * @return course details for a given courseId
+     * @see com.learning.app.models.Course
+     * @see org.springframework.jdbc.core.JdbcTemplate
+     */
     public Course getCourse(String courseId)
     {
         try
@@ -41,6 +71,13 @@ public class CourseRepository
         }
     }
 
+    /**
+     * Queries the datasource and fetches all the courses available in the database
+     *
+     * @return All the courses available in the database
+     * @see com.learning.app.models.Course
+     * @see org.springframework.jdbc.core.JdbcTemplate
+     */
     public List<Course> getAllCourses()
     {
         return jdbcTemplate.query(QueryConstants.QUERY_GET_ALL_COURSES, (resultSet, i) -> new Course()
@@ -50,6 +87,14 @@ public class CourseRepository
                 .withPricing(JsonUtility.jsonToJava(resultSet.getString("PRICING"), Pricing.class)));
     }
 
+    /**
+     * Persist course details into the database
+     *
+     * @param course The course details that are to be persisted into the database
+     * @return course id. This id can be used to retrieve the course details
+     * @see com.learning.app.models.Course
+     * @see org.springframework.jdbc.core.JdbcTemplate
+     */
     public String createCourse(Course course)
     {
         if (course.getId() == null)
