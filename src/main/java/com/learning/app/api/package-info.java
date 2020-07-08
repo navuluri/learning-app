@@ -1,5 +1,5 @@
 /**
- * Provides the classes that are REST APIs
+ * Contains the classes that are REST APIs
  * <p>
  * The package contains  one class -
  * <strong>CourseApi</strong>

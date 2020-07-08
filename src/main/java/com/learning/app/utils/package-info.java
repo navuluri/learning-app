@@ -1,5 +1,5 @@
 /**
- * Provides the classes that are critical to the entire application.
+ * Contain the classes that are utilities
  * <p>
  * The package contains  two classes -
  * the <strong>JsonUtility</strong> and the <strong>QueryConstants.</strong>

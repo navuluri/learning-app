@@ -1,5 +1,5 @@
 /**
- * Provides the classes that are critical to the entire application.
+ * Contains the classes that handle the application exceptions
  * <p>
  * The package contains  two classes -
  * the <strong>CourseExceptionAdvice</strong> and the <strong>CourseNotFoundException.</strong>

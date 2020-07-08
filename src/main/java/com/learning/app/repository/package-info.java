@@ -1,5 +1,5 @@
 /**
- * Provides the classes that are critical to the entire application.
+ * Contains the classes that perform datastore operations for entire application
  * <p>
  * The package contains  two classes -
  * the <strong>CourseRepository</strong> and the <strong>DatabaseInitializerRepository.</strong>

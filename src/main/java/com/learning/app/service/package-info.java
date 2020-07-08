@@ -1,5 +1,5 @@
 /**
- * Provides the classes that are critical to the entire application.
+ * Contains the classes that perform business logic
  * <p>
  * The package contains  one class -
  * the <strong>CourseService</strong>

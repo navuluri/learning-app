@@ -1,5 +1,5 @@
 /**
- * Provides the classes that are value objects and holds the data across different layers in the application
+ * Contains the classes that are value objects and holds the data across different layers in the application
  * <p>
  * The package contains  two classes -
  * the LearningApplication and the SwaggerConfiguration.
