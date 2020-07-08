@@ -7,12 +7,19 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import lombok.extern.slf4j.Slf4j;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Slf4j
 public class JsonUtility
 {
     private static final ObjectMapper mapper;
+
+
+    private JsonUtility()
+    {
+        // No init please
+    }
 
     static
     {
@@ -30,12 +37,13 @@ public class JsonUtility
         try
         {
             return mapper.readValue(json, mapper.getTypeFactory().constructCollectionType(List.class, type));
+
         }
         catch (Exception ex)
         {
             log.error("There is an error while converting  JSON Array to JAVA ", ex);
         }
-        return null;
+        return new ArrayList<>();
     }
 
     public static JsonNode getJsonNode(String json, String key)
@@ -65,6 +73,7 @@ public class JsonUtility
         }
         return o.toString();
     }
+
     public static <T> T jsonToJava(String json, Class<T> type)
     {
         try
@@ -77,7 +86,6 @@ public class JsonUtility
         }
         return null;
     }
-
 
 
 }
