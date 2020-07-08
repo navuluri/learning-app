@@ -1,5 +1,11 @@
 package com.learning.app.utils;
 
+/**
+ * Static constants to hold the database Queries.
+ * <p>
+ * Using JPA we can avoid writing these queries
+ * </p>
+ */
 public class QueryConstants
 {
     public static final String QUERY_GET_COURSE = "SELECT * FROM COURSE WHERE ID=?";

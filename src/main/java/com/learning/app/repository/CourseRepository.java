@@ -11,7 +11,6 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
-import java.util.UUID;
 
 /**
  * Contains all the required CRUD operations that can be performed on Course details like
@@ -97,10 +96,6 @@ public class CourseRepository
      */
     public String createCourse(Course course)
     {
-        if (course.getId() == null)
-        {
-            course.setId(UUID.randomUUID().toString());
-        }
         jdbcTemplate.update(QueryConstants.QUERY_INSERT_COURSE, course.getId(), course.getName(), course.getDescription(), JsonUtility.javaToJson(course.getPricing()));
         log.info("Record inserted successfully !");
         return course.getId();
