@@ -1,4 +1,15 @@
 # Learning App
 
-#### Work in progress
+
+An Upwork assignment to demonstrate REST API
+
+#### Build
+
+#### Javadocs
+
+#### Deploy
+
+#### Invoke / Test
+
+
 
