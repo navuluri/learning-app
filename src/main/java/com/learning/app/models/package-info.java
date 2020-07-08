@@ -1,8 +1,8 @@
 /**
- * Provides the classes that are critical to the entire application.
+ * Provides the classes that are value objects and holds the data across different layers in the application
  * <p>
  * The package contains  two classes -
- * the <strong>LearningApplication</strong> and the <strong>SwaggerConfiguration.</strong>
+ * the LearningApplication and the SwaggerConfiguration.
  * <p>
  * The LearningApplication bootstraps the entire application, including bootstrapping the test data required for the application.
  * </p>
@@ -12,4 +12,4 @@
  *
  * @since 1.0
  */
-package com.learning.app;
+package com.learning.app.models;

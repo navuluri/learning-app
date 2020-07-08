@@ -12,4 +12,4 @@
  *
  * @since 1.0
  */
-package com.learning.app;
+package com.learning.app.utils;

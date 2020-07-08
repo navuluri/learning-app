@@ -16,7 +16,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  * This class configures the Swagger Api for Spring Framework.
  * <p>The class parses the mentioned packages and generates Swagger based UI for the REST APIs</p>
  * <p>After successful application startup, open a browser to the below url to open the swagger documentation: </p>
- * <p>http://<HOST>:<PORT>/swagger-ui</p>
+ * <pre>http://HOST:PORT/swagger-ui</pre>
  *
  * <p>Once the Swagger-UI is displayed, it provides all the documentation of the RESTful APIs. The APIs can be tested using this swagger-ui</p>
  *
