@@ -2,12 +2,12 @@
  * Provides the classes that are critical to the entire application.
  * <p>
  * The package contains  two classes -
- * the LearningApplication and the SwaggerConfiguration.
+ * the <strong>CourseExceptionAdvice</strong> and the <strong>CourseNotFoundException.</strong>
  * <p>
- * The LearningApplication bootstraps the entire application, including bootstrapping the test data required for the application.
+ * The <strong>CourseExceptionAdvice</strong> is a common exception advice for the entire application
  * </p>
  * <p>
- * The SwaggerConfiguration contains the configurations required for providing the Swagger Based test console and API documentation
+ * The <strong>CourseNotFoundException</strong> exception is thrown when there is no course found in the system
  * </p>
  *
  * @since 1.0

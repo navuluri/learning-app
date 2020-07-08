@@ -2,12 +2,12 @@
  * Provides the classes that are critical to the entire application.
  * <p>
  * The package contains  two classes -
- * the <strong>LearningApplication</strong> and the <strong>SwaggerConfiguration.</strong>
+ * the <strong>JsonUtility</strong> and the <strong>QueryConstants.</strong>
  * <p>
- * The LearningApplication bootstraps the entire application, including bootstrapping the test data required for the application.
+ * The <strong>JsonUtility</strong> performs all the utility functions required to operate on raw JSON
  * </p>
  * <p>
- * The SwaggerConfiguration contains the configurations required for providing the Swagger Based test console and API documentation
+ * The <strong>QueryConstants</strong> contains the database queries
  * </p>
  *
  * @since 1.0

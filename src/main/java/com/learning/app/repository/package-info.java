@@ -2,14 +2,15 @@
  * Provides the classes that are critical to the entire application.
  * <p>
  * The package contains  two classes -
- * the LearningApplication and the SwaggerConfiguration.
+ * the <strong>CourseRepository</strong> and the <strong>DatabaseInitializerRepository.</strong>
  * <p>
- * The LearningApplication bootstraps the entire application, including bootstrapping the test data required for the application.
+ * The <strong>CourseRepository</strong> contains the operations that perform CRUD data store operations for the Course module
  * </p>
  * <p>
- * The SwaggerConfiguration contains the configurations required for providing the Swagger Based test console and API documentation
+ * The <strong>DatabaseInitializerRepository</strong> is used for bootstrapping the application data
  * </p>
  *
+ * @author Bhaskara Navuluri
  * @since 1.0
  */
 package com.learning.app.repository;
