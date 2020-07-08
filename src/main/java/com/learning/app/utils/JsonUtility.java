@@ -10,17 +10,39 @@ import lombok.extern.slf4j.Slf4j;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * This is a Utility class that performs the below JSON operations
+ * <br>
+ * <ul>
+ * <li>Converting JSON to a POJO (Deserialization)</li>
+ * <li>Converting POJO to JSON (Serialization)</li>
+ * <li>Converting a JSON array to List of POJOs</li>
+ * </ul>
+ * <p>
+ * The class uses <b>Jackson</b> libraries for Serialization and Deserialization of JSON
+ * </p>
+ *
+ * <p>
+ * The class contains a set of Static methods and hence new operator is not allowed on this class. The same is suggested by Sonar : java:S1118
+ * </p>
+ */
+
 @Slf4j
 public class JsonUtility
 {
     private static final ObjectMapper mapper;
 
-
+    /**
+     * No Access Constructor. Use the static methods
+     */
     private JsonUtility()
     {
         // No init please
     }
 
+    /**
+     * Setting global properties on Jackson ObjectMapper
+     * */
     static
     {
         mapper = new ObjectMapper();

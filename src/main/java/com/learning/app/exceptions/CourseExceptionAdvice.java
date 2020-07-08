@@ -1,5 +1,6 @@
 package com.learning.app.exceptions;
 
+import com.learning.app.models.Result;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -10,11 +11,11 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 public class CourseExceptionAdvice extends ResponseEntityExceptionHandler
 {
     @ExceptionHandler({CourseNotFoundException.class})
-    protected ResponseEntity<Error> handleCourseNotFound(CourseNotFoundException ex)
+    protected ResponseEntity<Result> handleCourseNotFound(CourseNotFoundException ex)
     {
-        Error error = new Error();
-        error.setMessage(ex.getMessage());
-        error.setCode(ex.getCode());
-        return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
+        Result result = new Result();
+        result.setMessage(ex.getMessage());
+        result.setCode(ex.getCode());
+        return new ResponseEntity<>(result, HttpStatus.NOT_FOUND);
     }
 }

@@ -24,4 +24,9 @@ public class CourseService
     {
         return courseRepository.getAllCourses();
     }
+
+    public String createCourse(Course course)
+    {
+        return courseRepository.createCourse(course);
+    }
 }

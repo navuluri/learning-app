@@ -11,6 +11,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.UUID;
 
 @Repository
 @Slf4j
@@ -47,5 +48,16 @@ public class CourseRepository
                 .withName(resultSet.getString("NAME"))
                 .withDescription(resultSet.getString("DESCRIPTION"))
                 .withPricing(JsonUtility.jsonToJava(resultSet.getString("PRICING"), Pricing.class)));
+    }
+
+    public String createCourse(Course course)
+    {
+        if (course.getId() == null)
+        {
+            course.setId(UUID.randomUUID().toString());
+        }
+        jdbcTemplate.update(QueryConstants.QUERY_INSERT_COURSE, course.getId(), course.getName(), course.getDescription(), JsonUtility.javaToJson(course.getPricing()));
+        log.info("Record inserted successfully !");
+        return course.getId();
     }
 }

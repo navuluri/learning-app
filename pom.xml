@@ -82,18 +82,22 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-			<!--<plugin>
+			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
 				<executions>
 					<execution>
-						<id>attach-javadocs</id>
+						<id>Generate-Javadocs</id>
+						<configuration>
+							<stylesheet>maven</stylesheet>
+							<stylesheetfile>${basedir}/stylesheet.css</stylesheetfile>
+						</configuration>
 						<goals>
 							<goal>jar</goal>
 						</goals>
 					</execution>
 				</executions>
-			</plugin>-->
+			</plugin>
 			<!--<plugin>
 				<groupId>org.sonarsource.scanner.maven</groupId>
 				<artifactId>sonar-maven-plugin</artifactId>

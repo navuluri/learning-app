@@ -2,21 +2,18 @@ package com.learning.app.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.With;
 
 @Data
-@AllArgsConstructor
+@EqualsAndHashCode
 @NoArgsConstructor
-public class Course
+@AllArgsConstructor
+public class Result
 {
     @With
-    private String id;
+    private int code;
     @With
-    private String name;
-    @With
-    private String description;
-    @With
-    private Pricing pricing;
-
+    private String message;
 }
