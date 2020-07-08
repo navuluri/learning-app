@@ -24,7 +24,7 @@ public class DatabaseInitializerRepository
     /**
      * Injects the JdbcTemplate instance into this class
      *
-     * @param jdbcTemplate
+     * @param jdbcTemplate The template pattern that will be used to query the data from the data stoer
      */
     public DatabaseInitializerRepository(JdbcTemplate jdbcTemplate)
     {
@@ -41,7 +41,7 @@ public class DatabaseInitializerRepository
     }
 
     /**
-     * Creates a new schema in the datastore. This gets invoked during the application startup
+     * Creates a new schema in the data store. This gets invoked during the application startup
      */
     public void createSchema()
     {

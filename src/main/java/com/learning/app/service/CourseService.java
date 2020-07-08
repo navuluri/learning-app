@@ -48,7 +48,7 @@ public class CourseService
     /**
      * Provision a new course with the given data
      *
-     * @param course
+     * @param course The course details that are to be persisted in the datastore
      * @return A course id that can be used to fetch the course details or delete the course based in the id
      */
     public String createCourse(Course course)

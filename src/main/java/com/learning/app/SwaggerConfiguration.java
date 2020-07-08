@@ -12,10 +12,26 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
+/**
+ * This class configures the Swagger Api for Spring Framework.
+ * <p>The class parses the mentioned packages and generates Swagger based UI for the REST APIs</p>
+ * <p>After successful application startup, open a browser to the below url to open the swagger documentation: </p>
+ * <p>http://<HOST>:<PORT>/swagger-ui</p>
+ *
+ * <p>Once the Swagger-UI is displayed, it provides all the documentation of the RESTful APIs. The APIs can be tested using this swagger-ui</p>
+ *
+ * @author Bhaskara Navuluri
+ * @since 1.0
+ */
 @Configuration
 @EnableSwagger2
 public class SwaggerConfiguration
 {
+    /**
+     * Prepares the Docket plugin with minimal Swagger 2 configurations
+     *
+     * @return a Docket documentation plugin with documentation type as Swagger v2.0 instance
+     */
     @Bean
     public Docket api()
     {
@@ -26,9 +42,14 @@ public class SwaggerConfiguration
                 .build().apiInfo(apiEndPointsInfo());
     }
 
+
+    /**
+     * Builds API Information like Author, Description, URL, License Info etc on the Swagger UI
+     *
+     * @return a API Info that can be displayed on the Swagger-UI
+     */
     private ApiInfo apiEndPointsInfo()
     {
-
         return new ApiInfoBuilder().title("Learning App")
                 .description("Learning App REST API - The API for accessing the Learning Courses")
                 .contact(new Contact("Bhaskara", "https://stackoverflow.com/users/1781174/bhaskara", "bhaskara.navuluri@gmail.com"))
