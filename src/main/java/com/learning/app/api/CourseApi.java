@@ -5,6 +5,7 @@ import com.learning.app.models.Course;
 import com.learning.app.models.Result;
 import com.learning.app.service.CourseService;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import lombok.AllArgsConstructor;
@@ -75,6 +76,7 @@ public class CourseApi
      * @see com.learning.app.models.Course
      */
     @GetMapping("/{id}")
+    @ApiOperation(value = "Gets the course details for a given course ID", produces = "application/json")
     @ApiResponses(value = {
 
             @ApiResponse(code = 200, message = "Returns a course JSON response for a given id"),
@@ -129,6 +131,7 @@ public class CourseApi
      * @see com.learning.app.models.Course
      */
     @GetMapping("")
+    @ApiOperation(value = "Gets all the courses details in the system", produces = "application/json")
     @ApiResponses(value = {
 
             @ApiResponse(code = 200, message = "Returns list of all the courses available"),
@@ -175,6 +178,7 @@ public class CourseApi
      * @see com.learning.app.models.Result
      */
     @PostMapping("")
+    @ApiOperation(value = "Create a new course", produces = "application/json", consumes = "application/json")
     @ApiResponses(value = {
 
             @ApiResponse(code = 201, message = "A course with given details is created"),
@@ -197,9 +201,10 @@ public class CourseApi
      * @return Void. Returns an empty response
      */
     @DeleteMapping("/{id}")
+    @ApiOperation(value = "Delete a course with the given courseId")
     @ApiResponses(value = {
 
-            @ApiResponse(code = 200, message = "The course with the given id is deleted"),
+            @ApiResponse(code = 204, message = "The course with the given id is deleted"),
             @ApiResponse(code = 401, message = "You are not authorized to delete the course"),
             @ApiResponse(code = 403, message = "Accessing the course you were trying to reach is forbidden"),
             @ApiResponse(code = 404, message = "The course you were trying to delete is not found"),
