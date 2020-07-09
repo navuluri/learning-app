@@ -3,16 +3,24 @@
 
 An Upwork assignment to demonstrate REST API
 
+### Index
+
+* [Code Structure](#code-structure)
+* [Data](#data)
+
+
 #### Code Structure
 
 #### Data
 
-Write about init data
+The sample data for this application is scraped (using Selenium) from [Udemy](https://www.udemy.com/courses/free/?p=1). The courses name, description and pricing is kept in a course.json file in resources folder 
+ 
 
 #### Spring Framework Components
 
 * **Spring Boot** - The core library for bootstrapping the entire application (Uses Tomcat 9 as default) 
-* **Spring Web** - For exposing REST Endpoints and   
+* **Spring Web** - For exposing REST Endpoints
+* **Spring JDBC Template** - For Data access 
 
 #### Open Source Libraries
 
