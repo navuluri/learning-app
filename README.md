@@ -11,10 +11,10 @@ An Upwork assignment to demonstrate REST API
 * [Open Source Libraries](#open-source-libraries)
 * [Build](#build)
 * [Javadocs](#javadocs)
-* [Deploy](#deploy)
 * [Application Server](#application-server)
-* [APIs](#apis)
 * [Run](#run)
+* [APIs](#apis)
+* [REST Console](#rest-console) 
 * [cURL](#curl)
 * [Technology choice](#technology-choice)
 * [Configuration](#configuration)
@@ -68,21 +68,24 @@ mvn clean package
 
 ```
 
-<p>After successful execution, there will be a folder called **target** at the root of the project. The target folder contains the executable jar **learning-app.jar** </p>
+\After successful execution, there will be a folder called **target** at the root of the project. The target folder contains the executable jar **learning-app.jar**
 
 > As part of the build's package goal, a plugin to generate javadocs for the assignment runs. This plugin generates Javadocs for the entire application code. Refer [Javadocs](#javadocs) section for more information  
 
 ## Javadocs
 
-## Deploy
+After successful build, in the **target** folder, there will be a folder called **apidocs**. 
+This apidocs folder contains the Javadocs in HTML format. Click on **index.html** (that is available in the apidocs folder) to navigate through the Javadocs
 
 ## Application Server
 
 Spring Boot 2.x by default comes with [**Apache Tomcat 9.x**](http://tomcat.apache.org/). So, for this App, the default Tomcat provided by the Spring Boot has been used (without any tuning) 
 
+## Run
+
 ## APIs
 
-## Run
+## REST Console 
 
 ## cURL
 
