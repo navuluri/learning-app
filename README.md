@@ -13,8 +13,9 @@ An Upwork assignment to demonstrate REST API
 * [Javadocs](#javadocs)
 * [Deploy](#deploy)
 * [Application Server](#application-server)
-* [Run](#run)
 * [APIs](#apis)
+* [Run](#run)
+* [cURL](#curl)
 * [Technology choice](#technology-choice)
 * [Configuration](#configuration)
 
@@ -54,7 +55,8 @@ Apart from Spring Boot and other Spring dependencies, this assignment uses the b
 
 * **Project Lombok** - Lombok is used to avoid boilerplate code like getters/setter/toString/hashCode/default constructors etc. More details about Project lombok can be found here:  [**Project Lombok**](https://projectlombok.org/)
 * **H2** - The in-memory database. The H2 database can be used in different modes like File, In-Memory, TCP etc. I have choosen the In-Memory style database for faster access. The data is destroyed when the application is shutdown. The data is populated again during the application startup
-* 
+* **commons-io** - The Apache commons IO library has been used to read the course.json file and other file operations
+* **Springfox Swagger2 and springfox-swagger-ui** - These libraries are used to generate the Swagger documentation of the APIs
 
 ## Build
 
@@ -66,9 +68,11 @@ Apart from Spring Boot and other Spring dependencies, this assignment uses the b
 
 Spring Boot 2.x by default comes with [**Apache Tomcat 9.x**](http://tomcat.apache.org/). So, for this App, the default Tomcat provided by the Spring Boot has been used (without any tuning) 
 
+## APIs
+
 ## Run
 
-## APIs
+## cURL
 
 ## Technology choice
 
@@ -82,7 +86,8 @@ The technology stack used for this assignment has been chosen keeping in mind th
 ## Configuration
 
 The application configuration (**application.yml**) can be found in **resources** folder.
-The file contains 2 profiles 
+The file contains 2 profiles
+ 
 * Development
 * Production
 
