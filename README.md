@@ -1,10 +1,13 @@
-# Learning App
+# Learning App ![Build Pass](https://img.shields.io/jenkins/build.svg?jobUrl=https%3A%2F%2Fbuilds.apache.org%2Fjob%2Fcommons-lang) - Assignment Complete  
+
+
 
 
 An Upwork assignment to demonstrate REST API
 
 ## Index
 
+* [Build Status]
 * [Code Structure](#code-structure)
 * [Data](#data)
 * [Spring Framework Components](#spring-framework-components)
@@ -19,8 +22,7 @@ An Upwork assignment to demonstrate REST API
 * [Technology choice](#technology-choice)
 * [Configuration](#configuration)
 
-
-
+ 
 ## Code Structure
 
 The code in this assignment is arranged in the below folder structure
@@ -128,6 +130,39 @@ The APIs are [**Swagger-Enabled**](https://swagger.io/). That is, the APIs can b
   ![Swagger API Test Console](screenshots/swagger2.png?raw=true "Swagger APIs")
 
 ## cURL
+
+Use the below curl commands to access the APIs
+
+> Replace the **HOST** with the host where the application is deployed and **PORT** with the port that the server is listening on. **COURSE_ID** can be any number from 1 to 400  
+
+* **getCourse** - Get course details for a particular Course ID
+
+```bash
+curl -X GET "http://HOST:PORT/api/v1/courses/COURSE_ID" -H  "accept: application/json"
+Example: curl -X GET "http://localhost:18080/api/v1/courses/100" -H  "accept: application/json"
+```
+* **getAllCourses** - Get all the courses available in the system
+
+```bash
+curl -X GET "http://HOST:PORT/api/v1/courses" -H  "accept: application/json"
+Example: curl -X GET "http://localhost:18080/api/v1/courses" -H  "accept: application/json"
+```
+* **deleteCourse** - Delete course details for a particular Course ID
+
+```bash
+curl -X DELETE "http://HOST:PORT/api/v1/courses/COURSE_ID" -H  "accept: application/json"
+Example: curl -X DELETE "http://localhost:18080/api/v1/courses/1" -H  "accept: application/json"
+```
+* **createCourse** - Creates a new course
+
+```bash
+curl -X POST "http://HOST:PORT/api/v1/courses/COURSE_ID" -H  "accept: application/json" -H "content-type: application/json" -d JSON_BODY
+Example: curl -X POST "http://localhost:18080/api/v1/courses" 
+-H  "accept: application/json" 
+-H  "Content-Type: application/json" 
+-d "{  \"description\": \"new course\",  \"name\": \"new course\",  \"pricing\": {    \"cess\": 10.0,    \"cost\": 2,    \"discount\": 1,    \"gst\": 0,    \"strategies\": [      \"Free\"    ]  }}"
+```
+
 
 ## Technology choice
 
