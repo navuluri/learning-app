@@ -2,6 +2,9 @@ spring:
   profiles:
     active: development
 
+pricing:
+  strategies: Free, One-Time, Subscription
+
 ---
 
 server:

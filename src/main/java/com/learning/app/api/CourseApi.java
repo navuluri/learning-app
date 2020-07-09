@@ -50,6 +50,7 @@ public class CourseApi
 {
     private final CourseService courseService;
 
+
     /**
      * The API gets the Course details for a given course ID. The API responds to  HTTP GET method and returns a JSON object
      *

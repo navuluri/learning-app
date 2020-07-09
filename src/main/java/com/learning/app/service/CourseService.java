@@ -4,6 +4,7 @@ import com.learning.app.models.Course;
 import com.learning.app.repository.CourseRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -21,18 +22,30 @@ import java.util.UUID;
 @AllArgsConstructor
 public class CourseService
 {
+    @Value("${pricing.strategies}")
+    private List<String> pricingStrategies;
+
     private final CourseRepository courseRepository;
 
 
     /**
      * Gets course details for a given courseId
+     * <p>
+     * If the pricing strategies are empty, by default we inject the pricing strategies defined in configuration.yml file
+     * </p>
      *
      * @param courseId The id for which the course details have to be fetched
      * @return A course object that contains all the course details
      */
     public Course getCourse(String courseId)
     {
-        return courseRepository.getCourse(courseId);
+        Course course = courseRepository.getCourse(courseId);
+        if (course.getPricing().getStrategies() == null || course.getPricing().getStrategies().size() == 0)
+        {
+            log.info("The pricing strategies are null. So assigning default pricing strategies");
+            course.getPricing().setStrategies(pricingStrategies);
+        }
+        return course;
     }
 
     /**

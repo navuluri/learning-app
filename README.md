@@ -58,7 +58,7 @@ Spring Boot 2.x by default comes with [**Apache Tomcat 9.x**](http://tomcat.apac
 
 The technology stack used for this assignment has been chosen keeping in mind the below points 
 
-* **Simple** - Since this is just an assignment used to develop a single API, I chose to keep the technology stack simple. For example, for data access, JPA could be used instead of JDBC Template  
+* **Simple** - Since this is just an assignment used to develop a single API, I chose to keep the technology stack simple :smile: . For example, for data access, JPA could be used instead of JDBC Template  
 * **Clean** - Wanted to keep the code clean and minimal. For example, to support **HATEOAS** it would have required an additional dependency and more code would have been required.
 * **Faster Development** - Since this is a competition, the focus was to develop faster
 * **Data source** - The datasource chosen for the assignment was a simple H2 database. For a real application we could choose a better In-Memory databases like [**Redis**](https://redis.io/). Also since the requirement is to keep the data dynamic with minimal changes to the user-interface, we can consider using a NOSQL database like [**MongoDB**](https://www.mongodb.com/)
@@ -73,6 +73,11 @@ The file contains 2 profiles
 The default profile is **Development**. So all the configurations required for this profile have been configured and the configurations required for **Production** profile has been ignored. 
 The configurations are self-explained. For more information, please refer Spring Configuration guide.
 <p>Apart from Spring configurations, the below are the additional configurations that are used for the assignment </p>
+
+<code>
+pricing:
+  strategies: Free, One-Time, Subscription
+</code>
   
 
 
