@@ -22,17 +22,21 @@ An Upwork assignment to demonstrate REST API
 
 ## Code Structure
 
+The code in this assignment is arranged in the below folder structure
+
 ``` bash
 
-├── com.learning.app                   # Compiled files (alternatively `dist`)
-    ├── api                    # Documentation files (alternatively `doc`)
-    ├── exceptions                     # Source files (alternatively `lib` or `app`)
-    ├── models                    # Automated tests (alternatively `spec` or `tests`)
-    ├── repository                   # Tools and utilities
-    ├── service
-    └── utils
+├── com.learning.app          # The root package
+    ├── api                   # This package contains all the APIs 
+    ├── exceptions            # This package contains all the exceptions that arise in the application
+    ├── models                # This package contains all the value objects
+    ├── repository            # This package contains all the Data access 
+    ├── service               # This package contains all the business logic
+    └── utils                 # This package contains all the utility classes used for this assignment
 
 ```
+
+Please refer to [Javadocs](#javadocs) section on generating a detailed explanation of the code
 
 ## Data
 
