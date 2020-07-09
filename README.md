@@ -14,6 +14,7 @@ An Upwork assignment to demonstrate REST API
 * [Deploy](#deploy)
 * [Application Server](#application-server)
 * [Run](#run)
+* [APIs](#apis)
 * [Configuration](#configuration)
 * [Technology choice](#technology-choice)
 
@@ -23,7 +24,7 @@ An Upwork assignment to demonstrate REST API
 
 ## Data
 
-The sample data for this application is scraped (using Selenium) from [Udemy](https://www.udemy.com/courses/free/?p=1). The courses name, description and pricing is kept in a course.json file in resources folder 
+The sample data for this application is scraped (using [**Selenium**](https://www.selenium.dev/)) from [**Udemy**](https://www.udemy.com/courses/free/?p=1). The courses name, description and pricing is kept in a course.json file in resources folder 
 
 ## Spring Framework Components
 
@@ -35,7 +36,7 @@ The sample data for this application is scraped (using Selenium) from [Udemy](ht
 
 Apart from Spring Boot and other Spring dependencies, this assignment uses the below open source libraries 
 
-* **Project Lombok** - Lombok is used to avoid boilerplate code like getters/setter/toString/hashCode/default constructors etc. More details about Project lombok can be found here:  [Project Lombok](https://projectlombok.org/)
+* **Project Lombok** - Lombok is used to avoid boilerplate code like getters/setter/toString/hashCode/default constructors etc. More details about Project lombok can be found here:  [**Project Lombok**](https://projectlombok.org/)
 * **H2** - The in-memory database. The H2 database can be used in different modes like File, In-Memory, TCP etc. I have choosen the In-Memory style database for faster access. The data is destroyed when the application is shutdown. The data is populated again during the application startup
 * 
 
@@ -47,9 +48,11 @@ Apart from Spring Boot and other Spring dependencies, this assignment uses the b
 
 ## Application Server
 
-Spring Boot 2.x by default comes with [Apache Tomcat 9.x](http://tomcat.apache.org/). So, for this App, the default Tomcat provided by the Spring Boot has been used (without any tuning) 
+Spring Boot 2.x by default comes with [**Apache Tomcat 9.x**](http://tomcat.apache.org/). So, for this App, the default Tomcat provided by the Spring Boot has been used (without any tuning) 
 
 ## Run
+
+## APIs
 
 ## Technology choice
 
@@ -58,9 +61,8 @@ The technology stack used for this assignment has been chosen keeping in mind th
 * **Simple** - Since this is just an assignment used to develop a single API, I chose to keep the technology stack simple. For example, for data access, JPA could be used instead of JDBC Template  
 * **Clean** - Wanted to keep the code clean and minimal. For example, to support **HATEOAS** it would have required an additional dependency and more code would have been required.
 * **Faster Development** - Since this is a competition, the focus was to develop faster
-* **Data source** - The datasource chosen for the assignment was a simple H2 database. For a real application we could choose a better In-Memory databases like Redis 
-   
-
+* **Data source** - The datasource chosen for the assignment was a simple H2 database. For a real application we could choose a better In-Memory databases like [**Redis**](https://redis.io/). Also since the requirement is to keep the data dynamic with minimal changes to the user-interface, we can consider using a NOSQL database like [**MongoDB**](https://www.mongodb.com/)
+ 
 ## Configuration
 
 
