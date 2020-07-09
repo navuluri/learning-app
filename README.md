@@ -122,8 +122,10 @@ The APIs are [**Swagger-Enabled**](https://swagger.io/). That is, the APIs can b
 * Start the server as mentioned in [Run](#run) section
 * Open a browser to [http://host:port/swagger-ui](http://host:port/swagger-ui). Example : [http://localhost:18080/swagger-ui](http://localhost:18080/swagger-ui)
 * If everything is OK, you have a screenshot similar to :
-  ![Swagger API Documentation](/screenshot/swagger1.png?raw=true "Swagger APIs")
-  ![Swagger API Test Console](/screenshot/swagger2.png?raw=true "Swagger APIs")
+  ![Swagger API Documentation](screenshots/swagger1.png?raw=true "Swagger APIs")
+  
+  
+  ![Swagger API Test Console](screenshots/swagger2.png?raw=true "Swagger APIs")
 
 ## cURL
 
