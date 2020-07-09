@@ -68,7 +68,7 @@ mvn clean package
 
 ```
 
-\After successful execution, there will be a folder called **target** at the root of the project. The target folder contains the executable jar **learning-app.jar**
+After successful execution, there will be a folder called **target** at the root of the project. The target folder contains the executable jar **learning-app.jar**
 
 > As part of the build's package goal, a plugin to generate javadocs for the assignment runs. This plugin generates Javadocs for the entire application code. Refer [Javadocs](#javadocs) section for more information  
 
@@ -82,6 +82,42 @@ This apidocs folder contains the Javadocs in HTML format. Click on **index.html*
 Spring Boot 2.x by default comes with [**Apache Tomcat 9.x**](http://tomcat.apache.org/). So, for this App, the default Tomcat provided by the Spring Boot has been used (without any tuning) 
 
 ## Run
+
+To start the application follow the below instructions
+
+* 1. Go to **target** folder
+* 2. Issue the command :
+ 
+
+```bash
+
+java -jar learning-app.jar
+
+```
+
+By default, the application starts on the port specified in the application.yml file (which is 18080).
+
+> Note the default port can be overridden using the options -Dserver.port
+
+To start the server on a different port 
+
+```bash
+
+java -Dserver.port=XXXXX -jar learning-app.jar
+
+  
+```
+Replace the XXXXX with your preferred port. For example:
+
+```bash
+
+java -Dserver.port=17080 -jar learning-app.jar
+
+  
+```
+
+
+
 
 ## APIs
 

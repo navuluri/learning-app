@@ -5,12 +5,12 @@ import com.learning.app.repository.DatabaseInitializerRepository;
 import com.learning.app.utils.JsonUtility;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.IOUtils;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
+import org.springframework.core.io.ResourceLoader;
 
 import java.nio.charset.StandardCharsets;
 import java.util.List;
@@ -32,6 +32,8 @@ import java.util.List;
 public class LearningApplication implements CommandLineRunner
 {
     private final DatabaseInitializerRepository databaseInitializerRepository;
+    private final ResourceLoader resourceLoader;
+
 
     /**
      * The start-point of the application. Spring Boot calls the  method to startup the application
@@ -58,12 +60,12 @@ public class LearningApplication implements CommandLineRunner
     @Override
     public void run(String... args) throws Exception
     {
-        Resource resource = new ClassPathResource("courses.json");
-        String json = FileUtils.readFileToString(resource.getFile(), StandardCharsets.UTF_8);
+        Resource resource = resourceLoader.getResource("classpath:courses.json");
+        String json = IOUtils.toString(resource.getInputStream(), StandardCharsets.UTF_8);
         List<Course> courseList = JsonUtility.jsonArrayToJava(json, Course.class);
         log.info("Initializing the DB - Start");
         databaseInitializerRepository.createSchema();
-        courseList.forEach(course -> databaseInitializerRepository.initDb(course));
+        courseList.forEach(databaseInitializerRepository::initDb);
         log.info("Initializing the DB - End");
 
     }
