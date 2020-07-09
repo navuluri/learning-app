@@ -54,11 +54,23 @@ The sample data for this application is scraped (using [**Selenium**](https://ww
 Apart from Spring Boot and other Spring dependencies, this assignment uses the below open source libraries 
 
 * **Project Lombok** - Lombok is used to avoid boilerplate code like getters/setter/toString/hashCode/default constructors etc. More details about Project lombok can be found here:  [**Project Lombok**](https://projectlombok.org/)
-* **H2** - The in-memory database. The H2 database can be used in different modes like File, In-Memory, TCP etc. I have choosen the In-Memory style database for faster access. The data is destroyed when the application is shutdown. The data is populated again during the application startup
+* **H2** - The in-memory database. The H2 database can be used in different modes like File, In-Memory, TCP etc. I have chosen the In-Memory style database for faster access. The data is destroyed when the application is shutdown. The data is populated again during the application startup
 * **commons-io** - The Apache commons IO library has been used to read the course.json file and other file operations
 * **Springfox Swagger2 and springfox-swagger-ui** - These libraries are used to generate the Swagger documentation of the APIs
 
 ## Build
+
+To build the project follow the below instructions. Go to the root of the application and give the command:
+
+```bash
+
+mvn clean package
+
+```
+
+<p>After successful execution, there will be a folder called **target** at the root of the project. The target folder contains the executable jar **learning-app.jar** </p>
+
+> As part of the build's package goal, a plugin to generate javadocs for the assignment runs. This plugin generates Javadocs for the entire application code. Refer [Javadocs](#javadocs) section for more information  
 
 ## Javadocs
 
