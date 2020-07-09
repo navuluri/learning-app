@@ -65,5 +65,15 @@ The technology stack used for this assignment has been chosen keeping in mind th
  
 ## Configuration
 
+The application configuration (**application.yml**) can be found in **resources** folder.
+The file contains 2 profiles 
+* Development
+* Production
+
+The default profile is **Development**. So all the configurations required for this profile have been configured and the configurations required for **Production** profile has been ignored. 
+The configurations are self-explained. For more information, please refer Spring Configuration guide.
+<p>Apart from Spring configurations, the below are the additional configurations that are used for the assignment </p>
+  
+
 
 
