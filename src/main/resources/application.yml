@@ -12,8 +12,6 @@ server:
   error:
     whitelabel:
       enabled: false
-data:
-  location: C:/courses.json
 
 spring:
   h2:

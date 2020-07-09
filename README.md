@@ -85,14 +85,13 @@ Spring Boot 2.x by default comes with [**Apache Tomcat 9.x**](http://tomcat.apac
 
 To start the application follow the below instructions
 
-* 1. Go to **target** folder
-* 2. Issue the command :
- 
+* Go to **target** folder
+* Issue the command :
 
 ```bash
+java -Dspring.config.location=<LOCATION_OF_application.yml>-jar learning-app.jar
 
-java -jar learning-app.jar
-
+Example: java -Dspring.config.location=C:/application.yml-jar learning-app.jar 
 ```
 
 By default, the application starts on the port specified in the application.yml file (which is 18080).
@@ -102,26 +101,29 @@ By default, the application starts on the port specified in the application.yml 
 To start the server on a different port 
 
 ```bash
-
-java -Dserver.port=XXXXX -jar learning-app.jar
-
-  
+java -Dserver.port=XXXXX  -Dspring.config.location=<LOCATION_OF_application.yml>-jar learning-app.jar
+Example: java -Dserver.port=19090  -Dspring.config.location=C:/applicatiton.yml -jar learning-app.jar
 ```
-Replace the XXXXX with your preferred port. For example:
-
-```bash
-
-java -Dserver.port=17080 -jar learning-app.jar
-
-  
-```
-
-
-
-
 ## APIs
 
+The supported APIS are : 
+
+* **getCourse** - **HTTP GET** - Get course details for a given Course Id
+* **getAllCourses** - **HTTP GET** - Get all the avaialble course details
+* **createCourse** - **HTTP POST** - Create a new course
+* **deleteCourse** - **HTTP DELETE** - Delete a course 
+
+For the payloads and the URL, Check [**REST Console**](#rest-console) section below
+
 ## REST Console 
+
+The APIs are [**Swagger-Enabled**](https://swagger.io/). That is, the APIs can be tested and the API documentation can be read online. To read and test the APIs using Swagger console follow the below instructions :
+
+* Start the server as mentioned in [Run](#run) section
+* Open a browser to [http://host:port/swagger-ui](http://host:port/swagger-ui). Example : [http://localhost:18080/swagger-ui](http://localhost:18080/swagger-ui)
+* If everything is OK, you have a screenshot similar to :
+  ![Swagger API Documentation](/screenshot/swagger1.png?raw=true "Swagger APIs")
+  ![Swagger API Test Console](/screenshot/swagger2.png?raw=true "Swagger APIs")
 
 ## cURL
 
