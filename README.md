@@ -8,7 +8,13 @@ An Upwork assignment to demonstrate REST API
 * [Code Structure](#code-structure)
 * [Data](#data)
 * [Spring Framework Components](#spring-framework-components)
-*  
+* [Open Source Libraries](#open-source-libraries)
+* [Build](#build)
+* [Javadocs](#javadocs)
+* [Deploy](#deploy)
+* [Run](#run)
+* [Configuration](#configuration)
+* [Technology choice](#technology-choice)
 
 
 ## Code Structure
@@ -24,9 +30,6 @@ The sample data for this application is scraped (using Selenium) from [Udemy](ht
 * **Spring Web** - For exposing REST Endpoints
 * **Spring JDBC Template** - For Data access 
 
----
-
-
 ## Open Source Libraries
 
 Apart from Spring Boot and other Spring dependencies, this assignment uses the below open source libraries 
@@ -39,17 +42,17 @@ Apart from Spring Boot and other Spring dependencies, this assignment uses the b
 * **MySQL**
 * **Tomcat 8**
 
-### Build
+## Build
 
-### Javadocs
+## Javadocs
 
-### Deploy
+## Deploy
 
-### Invoke / Test
+## Run
 
-### Reason for choosing the stack
+## Technology choice
 
-### Configuration
+## Configuration
 
 
 
