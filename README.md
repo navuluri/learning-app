@@ -15,8 +15,9 @@ An Upwork assignment to demonstrate REST API
 * [Application Server](#application-server)
 * [Run](#run)
 * [APIs](#apis)
-* [Configuration](#configuration)
 * [Technology choice](#technology-choice)
+* [Configuration](#configuration)
+
 
 
 ## Code Structure
@@ -74,11 +75,15 @@ The default profile is **Development**. So all the configurations required for t
 The configurations are self-explained. For more information, please refer Spring Configuration guide.
 <p>Apart from Spring configurations, the below are the additional configurations that are used for the assignment </p>
 
-<code>
+``` yml
 pricing:
   strategies: Free, One-Time, Subscription
-</code>
+
+```
   
 
+The above configuration is created for the below requirement :
 
+> There should be a global configuration that should be used in cases courses have not added their overrides.
 
+So, to demonstrate the above requirement, if the course does not have a pricing strategy, I am filling the strategy with above three options  
