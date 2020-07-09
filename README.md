@@ -21,7 +21,18 @@ An Upwork assignment to demonstrate REST API
 
 
 ## Code Structure
- 
+
+``` bash
+
+├── com.learning.app                   # Compiled files (alternatively `dist`)
+    ├── api                    # Documentation files (alternatively `doc`)
+    ├── exceptions                     # Source files (alternatively `lib` or `app`)
+    ├── models                    # Automated tests (alternatively `spec` or `tests`)
+    ├── repository                   # Tools and utilities
+    ├── service
+    └── utils
+
+```
 
 ## Data
 
