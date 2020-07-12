@@ -7,7 +7,6 @@ An Upwork assignment to demonstrate REST API
 
 ## Index
 
-* [Build Status]
 * [Code Structure](#code-structure)
 * [Data](#data)
 * [Spring Framework Components](#spring-framework-components)
